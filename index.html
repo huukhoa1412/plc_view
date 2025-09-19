@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Xem chương trình PLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="src/favicon.png">
+  <link rel="stylesheet" href="src/index-style.css">
+</head>
+<body>
+<header>
+  <h1>Xem chương trình PLC</h1>
+  <p>Quản lý danh sách dự án, nhập/xuất và mở trong viewer</p>
+</header>
+
+<div class="wrap">
+  <div class="toolbar">
+    <button id="addBtn" class="btn">➕ Thêm dự án (.json)</button>
+    <button id="openDefaultBtn" class="btn">🧱 Mở mẫu trống</button>
+    <button id="exportBtn" class="btn">💾 Xuất projects.json</button>
+    <label class="btn" for="importFile">📂 Nhập projects.json</label>
+    <button id="helpBtn" class="btn" aria-expanded="false">📘 Hướng dẫn</button>
+    <input id="importFile" type="file" accept=".json" />
+    <input id="pickJsonFile" type="file" accept=".json" />
+  </div>
+
+  <section id="helpPanel" class="help-panel" hidden>
+    <div class="lang-switch">
+      <button type="button" id="btnVI">VI</button>
+      <button type="button" id="btnEN">EN</button>
+    </div>
+
+	<!-- Phiên bản VI -->
+	<div class="lang lang-vi">
+	  <h3>Cách sử dụng danh sách dự án</h3>
+	  <ol>
+		<li><strong>➕ Thêm dự án (.json)</strong> – tải một tệp JSON dự án đơn lẻ.</li>
+		<li><strong>🧱 Mở mẫu trống</strong> – khởi chạy trình xem với dự án mặc định.</li>
+		<li><strong>📂 Nhập projects.json</strong> – tải toàn bộ danh sách dự án.</li>
+		<li><strong>💾 Xuất projects.json</strong> – lưu danh sách hiện tại ra tệp.</li>
+		<li>Trong thẻ dự án, nhấp <em>Open</em> để đọc hoặc chỉnh sửa trong trình xem. Thay đổi sẽ được lưu cục bộ.</li>
+		<li>Menu <strong>•••</strong> cho phép đổi tên/mô tả, thay thế tệp, nhân bản, xuất hoặc xóa.</li>
+		<li>Ô tìm kiếm lọc theo tên, mô tả và ngày.</li>
+	  </ol>
+	</div>
+
+    <!-- Wersja EN -->
+    <div class="lang lang-en">
+      <h3>How to use the project list</h3>
+      <ol>
+        <li><strong>➕ Add project (.json)</strong> – loads a single JSON project file.</li>
+        <li><strong>🧱 Open empty template</strong> – launches the viewer with the default project.</li>
+        <li><strong>📂 Import projects.json</strong> – loads the entire list of projects.</li>
+        <li><strong>💾 Export projects.json</strong> – saves the current list to a file.</li>
+        <li>On the project card, click <em>Open</em> to read or edit in the viewer. Changes are saved locally.</li>
+        <li>Menu <strong>•••</strong> allows you to change the name/description, replace the file, duplicate, export, or delete.</li>
+        <li>The search engine filters by name, description, and date.</li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="search">
+    <input id="q" placeholder="Search by name/description/date..." />
+  </div>
+
+  <div id="grid" class="grid"></div>
+  <div id="empty" class="empty" style="display:none">
+    Chưa có dự án nào. Thêm mới hoặc nhập tệp <code>projects.json</code>.
+  </div>
+</div><!-- /wrap -->
+
+<div id="idxOverlay" style="display:none">
+  <div id="idxDialog">
+    <h3 id="idxTitle">Enter value</h3>
+    <div id="idxErr" class="error-message"></div>
+    <div class="form-group">
+      <label id="idxLabel" for="idxInput">Value:</label>
+      <input id="idxInput" type="text" />
+    </div>
+    <div class="idx-actions">
+      <button class="ok" id="idxOk">OK</button>
+      <button class="cancel" id="idxCancel">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div id="idxConfirmOverlay" style="display:none">
+  <div id="idxConfirm">
+    <h3 id="idxConfirmTitle">Confirm</h3>
+    <div id="idxMsg">Are you sure?</div>
+    <div class="idx-actions">
+      <button class="ok" id="idxYes">OK</button>
+      <button class="cancel" id="idxNo">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<footer><a href="https://github.com/hukhoa1412" target="_blank">Created by lehuukhoa © 2025</a></footer>
+
+<script src="src/index-app.js"></script>
+</body>
+</html>

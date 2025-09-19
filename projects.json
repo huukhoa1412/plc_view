@@ -1,0 +1,9 @@
+[
+  {
+    "id": "212e4275-1ec5-40c3-aa41-230ee4104f12",
+    "name": "Sample Project",
+    "description": "",
+    "inlineData": "{\n  \"title\": \"Sample Project\",\n  \"date\": \"2025-08-31T13:13:49.720Z\",\n  \"menuData\": [\n    {\n      \"title\": \"Program blocks\",\n      \"icon\": \"<img class=\\\"icon\\\" src=\\\"images/program_blocks.png\\\">\",\n      \"items\": [\n        {\n          \"text\": \"Main [OB1]\",\n          \"link\": \"pdf/main.pdf\",\n          \"fblock\": false\n        },\n        {\n          \"text\": \"FC_InputMapping [FC2]\",\n          \"link\": \"pdf/main.pdf\",\n          \"fblock\": false\n        },\n        {\n          \"text\": \"FB_Test [FB2]\",\n          \"link\": \"pdf/main.pdf\",\n          \"fblock\": false\n        },\n        {\n          \"text\": \"DB_InputMapping [DB2]\",\n          \"link\": \"pdf/main.pdf\",\n          \"fblock\": false\n        },\n        {\n          \"text\": \"Test\",\n          \"children\": []\n        }\n      ]\n    },\n    {\n      \"title\": \"PLC tags\",\n      \"icon\": \"<img class=\\\"icon\\\" src=\\\"images/plc_tags.png\\\">\",\n      \"items\": [\n        {\n          \"text\": \"IO_Tags\",\n          \"link\": \"pdf/main.pdf\",\n          \"fblock\": false\n        },\n        {\n          \"text\": \"Test\",\n          \"children\": []\n        }\n      ]\n    },\n    {\n      \"title\": \"PLC data types\",\n      \"icon\": \"<img class=\\\"icon\\\" src=\\\"images/plc_data_types.png\\\">\",\n      \"items\": [\n        {\n          \"text\": \"Test\",\n          \"children\": []\n        },\n        {\n          \"text\": \"UDT_Test\",\n          \"link\": \"pdf/main.pdf\",\n          \"fblock\": false\n        }\n      ]\n    }\n  ]\n}",
+    "slug": "sample-project"
+  }
+]

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Xem chương trình PLC</title>
+    <link rel="icon" type="image/png" href="src/favicon.png">
+    <link rel="stylesheet" href="src/viewer-style.css">
+</head>
+<body>
+	<header>
+		<a href="index.html" class="back-link" aria-label="Back to projects">← Quay lại dự án</a>
+		<h1>Xem chương trình PLC</h1>
+		<p>
+			<span id="titleText">Dự án mẫu</span>
+			<span id="dateText" class="date-chip" title="Project last edit"></span>
+			<button id="editTitleBtn" style="display:none; font-size:12px; margin-left:4px;">✏️</button>
+		</p>
+	</header>
+	
+	<div class="main">
+		<div class="menu">
+			<div class="menu-controls">
+				<button id="saveJson" type="button"><span>💾</span> Xuất .json</button>
+				<button id="helpBtn" type="button"><span>📘</span> Hướng dẫn</button>
+				<button id="toggleEdit" type="button"><span>✏️</span> Chế độ chỉnh sửa</button>
+				<button id="addBlock" type="button" style="display:none;"><span>➕</span> Thêm khối</button>
+				<button id="addGroup" type="button" style="display:none;"><span>📁</span> Thêm nhóm</button>
+				<button id="reset" type="button" style="display:none;"><span>🔄</span> Đặt lại</button>
+				<input type="file" id="fileInput" accept=".json" style="display:none">
+			</div>
+			<div id="menuContainer" class="menu"></div>
+		</div>
+		<div class="content">
+			<iframe id="pdfViewer" src="default.html" allow="autoplay"></iframe>
+		</div>
+	</div>
+
+<!-- Hộp thoại Thêm -->
+<div id="overlay" style="display:none">
+	<div id="dialog">
+		<h3 id="dialogTitle"></h3>
+		<div id="formError" class="error-message" style="display:none;"></div>
+		<div class="form-group">
+			<label id="nameLabel" for="newName"></label>
+			<input id="newName" type="text">
+		</div>
+		<div id="linkField" class="form-group">
+			<label for="newLink">Liên kết PDF:</label>
+			<input id="newLink" type="text">
+		</div>
+		<div id="fbOptions" class="checkbox-group" style="display:none;">
+			<label for="createFBlock">
+				<input type="checkbox" id="createFBlock">
+				Tạo F-Block (biểu tượng màu vàng)
+			</label>
+		</div>
+		<div class="form-group">
+			<label for="targetPath">Vị trí lưu:</label>
+			<select id="targetPath"></select>
+		</div>
+		<div class="dialog-actions">
+			<button id="confirmAdd" type="button">Thêm</button>
+			<button id="cancelAdd" type="button">Hủy</button>
+		</div>
+	</div>
+</div>
+
+<!-- Hộp thoại Chỉnh sửa -->
+<div id="editOverlay" style="display:none">
+	<div id="editDialog">
+		<h3>Chỉnh sửa mục</h3>
+		<div class="form-group">
+			<label for="editText">Tên:</label>
+			<input id="editText" type="text">
+		</div>
+		<div class="form-group" id="editLinkGroup">
+			<label for="editLink">Liên kết:</label>
+			<input id="editLink" type="text">
+		</div>
+		<div id="editError" class="error-message" style="display:none;"></div>
+		<div class="dialog-actions">
+			<button id="confirmEdit" type="button">Lưu</button>
+			<button id="cancelEdit" type="button">Hủy</button>
+		</div>
+	</div>
+</div>
+
+	
+<footer><a href="https://github.com/hukhoa1412" target="_blank">Created by lehuukhoa © 2025</a></footer>
+	
+	<script src="src/viewer-app.js"></script>
+</body>
+</html>
